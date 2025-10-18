@@ -7,12 +7,13 @@
  * https://github.com/sanity-io/next-sanity
  */
 
-import StudioWrapper from "./StudioWrapper";
+import { NextStudio } from 'next-sanity/studio'
+import config from '../../../sanity.config'
 
-export const dynamic = "force-static";
+export const dynamic = 'force-static'
 
-export { metadata, viewport } from "next-sanity/studio";
+export { metadata, viewport } from 'next-sanity/studio'
 
 export default function StudioPage() {
-  return <StudioWrapper />;
+  return <NextStudio config={config} />
 }

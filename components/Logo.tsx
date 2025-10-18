@@ -17,14 +17,14 @@ const Logo = ({
           className
         )}
       >
-        Shopcar
+        Shop
         <span
           className={cn(
             "text-shop_light_green group-hover:text-shop_dark_green hoverEffect",
             spanDesign
           )}
         >
-          t
+          it
         </span>
       </h2>
     </Link>

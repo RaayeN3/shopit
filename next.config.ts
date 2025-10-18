@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  turbopack: {
+    // Ensure Turbopack treats this folder as the workspace root (prevents lockfile mis-detection)
+    root: __dirname,
+  },
 };
 
 export default nextConfig;

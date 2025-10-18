@@ -1,6 +1,6 @@
 import { Product } from "@/sanity.types";
 import useStore from "@/store";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Minus, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,9 @@ interface Props {
 }
 const QuantityButtons = ({ product, className }: Props) => {
   const { addItem, removeItem, getItemCount } = useStore();
-  const itemCount = getItemCount(product?._id);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const itemCount = mounted ? getItemCount(product?._id) : 0;
   const isOutOfStock = product?.stock === 0;
 
   const handleRemoveProduct = () => {

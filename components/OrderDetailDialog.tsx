@@ -42,7 +42,8 @@ const OrderDetailDialog: React.FC<OrderDetailsDialogProps> = ({
           </p>
           <p>
             <strong>Date:</strong>{" "}
-            {order.orderDate && new Date(order.orderDate).toLocaleDateString()}
+            {order.orderDate &&
+              new Date(order.orderDate).toISOString().slice(0, 10)}
           </p>
           <p>
             <strong>Status:</strong>{" "}

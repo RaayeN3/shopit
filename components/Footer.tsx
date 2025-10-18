@@ -18,8 +18,8 @@ const Footer = () => {
           <div className="space-y-4">
             <Logo />
             <SubText>
-              Discover curated furniture collections at Shopcartyt, blending
-              style and comfort to elevate your living spaces.
+              Discover curated furniture collections at Shopit, blending style
+              and comfort to elevate your living spaces.
             </SubText>
             <SocialMedia
               className="text-darkColor/60"
@@ -70,7 +70,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="py-6 border-t text-center text-sm text-gray-600">
-          <div>
+          <div suppressHydrationWarning>
             © {new Date().getFullYear()} <Logo className="text-sm" />. All
             rights reserved.
           </div>

@@ -9,7 +9,6 @@ import {
   TooltipTrigger,
 } from "./ui/tooltip";
 import PriceFormatter from "./PriceFormatter";
-import { format } from "date-fns";
 import { X } from "lucide-react";
 import { useState } from "react";
 import OrderDetailDialog from "./OrderDetailDialog";
@@ -38,7 +37,7 @@ const OrdersComponent = ({ orders }: { orders: MY_ORDERS_QUERYResult }) => {
                   </TableCell>
                   <TableCell className="hidden md:table-cell">
                     {order?.orderDate &&
-                      format(new Date(order.orderDate), "dd/MM/yyyy")}
+                      new Date(order.orderDate).toISOString().slice(0, 10)}
                   </TableCell>
                   <TableCell>{order.customerName}</TableCell>
                   <TableCell className="hidden sm:table-cell">

@@ -7,6 +7,7 @@ import useStore from "@/store";
 import toast from "react-hot-toast";
 import PriceFormatter from "./PriceFormatter";
 import QuantityButtons from "./QuantityButtons";
+import { useEffect, useState } from "react";
 
 interface Props {
   product: Product;
@@ -15,7 +16,9 @@ interface Props {
 
 const AddToCartButton = ({ product, className }: Props) => {
   const { addItem, getItemCount } = useStore();
-  const itemCount = getItemCount(product?._id);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const itemCount = mounted ? getItemCount(product?._id) : 0;
   const isOutOfStock = product?.stock === 0;
 
   const handleAddToCart = () => {
