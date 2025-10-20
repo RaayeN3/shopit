@@ -9,10 +9,7 @@
 
 import StudioWrapper from "../../studio/[[...tool]]/StudioWrapper";
 
-export const dynamic = "force-static";
-
-export { metadata, viewport } from "next-sanity/studio";
-
 export default function StudioPage() {
   return <StudioWrapper />;
+  // Additional functionality can be added here
 }
