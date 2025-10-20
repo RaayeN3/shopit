@@ -7,9 +7,10 @@
  * https://github.com/sanity-io/next-sanity
  */
 
-import StudioWrapper from "../../studio/[[...tool]]/StudioWrapper";
+import StudioWrapper from "./StudioWrapper";
 
-export default function StudioPage() {
+export { metadata, viewport } from "next-sanity/studio";
+
+export default function ShopitStudioPage() {
   return <StudioWrapper />;
-  // Additional functionality can be added here
 }
